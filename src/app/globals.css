@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+:root {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0B0F19;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Noise overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9990;
+}
+
+/* Cursor states */
+body.hovering #cursor-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #7C3AED;
+}
+body.hovering #cursor-ring {
+  width: 54px;
+  height: 54px;
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+/* Hero grid */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 80% at 60% 30%, black 0%, transparent 70%);
+}
+
+/* Loader bar */
+@keyframes loaderBar {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+.loader-bar-fill {
+  animation: loaderBar 1.2s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 0;
+}
+
+/* Flow connector fill */
+@keyframes connectorFill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+.connector-animate {
+  animation: connectorFill 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0B0F19; }
+::-webkit-scrollbar-thumb { background: rgba(0,209,255,0.3); border-radius: 2px; }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #00D1FF;
+  outline-offset: 2px;
+}
+
+/* Transition util */
+.tr { transition-property: all; transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
