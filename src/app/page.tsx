@@ -6,6 +6,7 @@ import Marquee from "@/components/Marquee";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
 import Services from "@/components/Services";
+import Omniroute from "@/components/Omniroute";
 import Industries from "@/components/Industries";
 import Flow from "@/components/Flow";
 import Works from "@/components/Works";
@@ -26,6 +27,7 @@ export default function Home() {
         <Problem />
         <Solution />
         <Services />
+        <Omniroute />
         <Industries />
         <Flow />
         <Works />
