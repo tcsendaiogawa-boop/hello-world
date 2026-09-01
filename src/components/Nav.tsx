@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#services", label: "サービス" },
+  { href: "#omniroute", label: "オムニルート" },
   { href: "#industries", label: "業種別" },
   { href: "#flow", label: "導入の流れ" },
   { href: "#works", label: "実績" },
